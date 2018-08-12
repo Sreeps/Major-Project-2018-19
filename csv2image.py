@@ -3,10 +3,11 @@ from numpy import genfromtxt
 import matplotlib.pyplot as plt
 import png
 
-path = input("Enter the file path ")
+csv_path = input("Enter the file path ")
+image_path = input("Enter the path for the image ")
 
-image_data = genfromtxt(path, dtype=np.uint8, delimiter=',')
-png.from_array(image_data[:, 1:514], 'L').save("output.png")
+image_data = genfromtxt(csv_path, dtype=np.uint8, delimiter=',')
+png.from_array(image_data[:, 1:514], 'L').save(image_path)
 
 
 x = np.uint8(plt.imread('barbara.png')*256)
